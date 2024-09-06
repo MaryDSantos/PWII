@@ -188,8 +188,8 @@ foreach($pessoas as $itemlista)
     echo "</tr>";
 }
 
-echo "</table>";
 
+echo "</table>";
 
 ?>
 </div>
