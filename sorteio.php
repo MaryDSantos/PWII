@@ -20,8 +20,8 @@ $aluno=array(
 ?>
 
 <?php
-$vencedor = $aluno[array_rand($aluno)];
-
+//$vencedor = $aluno[array_rand($aluno)];
+$vencedor =$aluno[rand(0, count($aluno) - 1)];
 echo"<h1>";
 echo "Vencedor é: ".$vencedor;
 echo"<h1>";
