@@ -60,7 +60,7 @@
           <a class="nav-link" href="novo_produto.php">Novo produto</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="produtos.php">Produto</a>
+          <a class="nav-link" href="produto.php">Produto</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
