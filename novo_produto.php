@@ -20,8 +20,28 @@ if (isset ($_POST["nome"])
         echo "<div class ='alert alert-danger'>campo valor pode estar em branco </div>";
     }else if(empty($_POST["codigobarras"])){
         echo "<div class ='alert alert-danger'>campo cogido de barra pode estar em branco </div>";
-    }else{
+    }else if{
         echo"<br><div class='alert alert=danger'> campo data de validade nao pode estar em branco</div>";
+    }else{
+        include "conexao.php";
+
+        $nome = $_POST["nome"];
+        $valor = str_replace(",",".",$_POST["valor"]);
+        $codigobarras = $_POST["codigobarras"];
+
+        $query = "INSERT INTO produtos (DESCRICAO, VALOR, CODIGO_BARRAS, ATIVO)
+
+            VALUES ('$nome', $valor, '$codigobarras', 1)";
+
+            $resultado = $conexao->query($query);
+            if($resultado){
+                echo"<div class='alert alert-success'>
+                salvo no banco com sucesso </div>";
+            }
+
+        //Executa a logica do progama
+        //salvar no banco
+        echo "<h1> salvo no banco com sucesso</h1>";
     }
 }
 ?>
