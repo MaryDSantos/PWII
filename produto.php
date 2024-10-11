@@ -14,7 +14,7 @@ if( isset($_GET["pesquisa"]) )
     }
 }
 else
-{
+
     $pesquisa = "";
     include "conexao.php";
     $sql = "select id, descricao, valor, codigo_barras from produto order by id desc";
@@ -27,14 +27,12 @@ else
             echo "<td>" . $row["valor"] . "</td>";
             echo "<td><a href='editar_produto.php?id=$row[id]' class='btn btn-warning'>editar</a></td>";
             echo "<a class='btn btn-danger'>excluir</a></td>";    
-            echo "</tr>"
+            echo "</tr>";
         }
-        else{
+        }else{
             echo"<tr><td colspan='3'>nenhum resgistro encontrado</td></tr>";
         }
         $conexao->close();
-    }
-}
 
 
 ?>
