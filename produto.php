@@ -7,32 +7,33 @@ if( isset($_GET["pesquisa"]) )
     if( empty($pesquisa) )
     {
        //Se a variavel estiver vazia executa aqui 
+       include "conexao.php";
+       $sql = "Select Id, Descricao, Valor, Codigo_barras, Imagem from Produtos order by Id desc";
+       $resultado = $conexao->query($sql);
+       $conexao->close();
     }
     else
     {
         //Aqui vai a lógica da pesquisa
+        include "conexao.php";
+        $sql = "Select Id, Descricao, Valor, Codigo_barras, Imagem 
+                from Produtos  
+                where Descricao like '%$pesquisa%' || Codigo_Barras = $pesquisa
+                order by Id desc";
+        $resultado = $conexao->query($sql);
+        $conexao->close();
     }
 }
 else
-
+{
     $pesquisa = "";
     include "conexao.php";
-    $sql = "select id, descricao, valor, codigo_barras from produto order by id desc";
+    $sql = "Select Id, Descricao, Valor, Codigo_barras, Imagem from Produtos order by Id desc";
     $resultado = $conexao->query($sql);
-    if($resulado->num_rows>0){
-        while($row = $resultado->fetch_assoc()){
-            echo "<tr>";
-            echo "<td>" . $row["id"] . "</td>";
-            echo "<td>" . $row["descricao"] . "</td>";
-            echo "<td>" . $row["valor"] . "</td>";
-            echo "<td><a href='editar_produto.php?id=$row[id]' class='btn btn-warning'>editar</a></td>";
-            echo "<a class='btn btn-danger'>excluir</a></td>";    
-            echo "</tr>";
-        }
-        }else{
-            echo"<tr><td colspan='3'>nenhum resgistro encontrado</td></tr>";
-        }
-        $conexao->close();
+   
+    $conexao->close();
+    
+}
 
 
 ?>
@@ -84,23 +85,22 @@ else
                             </tr>
                         </thead>
                         <tbody>
-                            <?php for($i = 0; $i < 25; $i++)
-                            {
-                                echo "<tr>
-                                        <td>Id $i</td>
-                                        <td>Descrição $i</td>
-                                        <td>Valor $i</td>
-                                        <td>Código barras $i</td>
-                                        <td>Imagem $i</td>
-                                        <td>
-                                            <a href='' class='btn btn-warning'>
-                                                Editar
-                                            </a>
-                                             <a href='' class='btn btn-danger'>
-                                                Excluir
-                                            </a>
-                                        </td>
-                                    </tr>";
+                            <?php 
+                            
+                            if ($resultado->num_rows > 0) {
+                                while($row = $resultado->fetch_assoc()) {
+                                    echo "<tr>";
+                                    echo "<td>" . $row["Id"] . "</td>";
+                                    echo "<td>" . $row["Descricao"] . "</td>";
+                                    echo "<td>" . $row["Valor"] . "</td>";
+                                    echo "<td>" . $row["Codigo_barras"] . "</td>";
+                                    echo "<td>" . $row["Imagem"] . "</td>";
+                                    echo "<td><a href='editar_produto.php?Id=$row[Id]' class='btn btn-warning' >Editar</a>  ";
+                                    echo "<a href='excluir_produto.php?Id=$row[Id]' class='btn btn-danger'>Excluir</a></td>";
+                                    echo "</tr>";
+                                }
+                            } else {
+                                echo "<tr><td colspan='3'>Nenhum registro encontrado</td></tr>";
                             }
                             ?>
                                                     
