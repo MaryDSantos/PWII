@@ -64,30 +64,6 @@
                 Array
             </a>
         </li>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="https://www.facebook.com/?locale=pt_BR">
-                Facebook
-            </a>
-        </li>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="https://www.instagram.com/">
-                Instagram
-            </a>
-        </li>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="https://br.linkedin.com/?src=go-pa&trk=sem-ga_campid.12619604099_asid.149519181115_crid.657343811719_kw.linkedin_d.c_tid.kwd-148086543_n.g_mt.e_geo.9100684&mcid=6821526239111716925&cid=&gad_source=1&gclid=EAIaIQobChMIqYqG8P7AiAMVh0FIAB1_dguXEAAYASAAEgLrAPD_BwE&gclsrc=aw.ds">
-                Linkedin
-            </a>
-        </li>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="https://www.tiktok.com/pt-BR/">
-                Tiktok
-            </a>
-        </li>
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
