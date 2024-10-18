@@ -18,7 +18,7 @@ if( isset($_GET["pesquisa"]) )
         include "conexao.php";
         $sql = "Select Id, Descricao, Valor, Codigo_barras, Imagem 
                 from Produtos  
-                where Descricao like '%$pesquisa%' || Codigo_Barras = $pesquisa
+                where Descricao like '%$pesquisa%' || Codigo_Barras = '$pesquisa'
                 order by Id desc";
         $resultado = $conexao->query($sql);
         $conexao->close();
