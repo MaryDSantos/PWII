@@ -10,6 +10,7 @@ if( isset($_GET["pesquisa"]) )
        include "conexao.php";
        $sql = "Select Id, Descricao, Valor, Codigo_barras, Imagem from Produtos order by Id desc";
        $resultado = $conexao->query($sql);
+       
        $conexao->close();
     }
     else
@@ -21,6 +22,7 @@ if( isset($_GET["pesquisa"]) )
                 where Descricao like '%$pesquisa%' || Codigo_Barras = '$pesquisa'
                 order by Id desc";
         $resultado = $conexao->query($sql);
+        
         $conexao->close();
     }
 }
@@ -38,6 +40,15 @@ else
 
 ?>
 <br>
+<?php
+    if(isset($_GET["erro"]) && !empty($_POST["erro"]))
+    {
+        echo "<div class='alert alert-danger'>";
+        echo $_GET["erro"];
+        echo "</div>";
+    }
+    ?>
+    <br>
 <div class="row">
     <div class="col-12">
         <div class="card">
