@@ -39,6 +39,12 @@ $script = "
     ('Secador de Cabelo - 2200W', 199.90, '1234567890141', 1),
     ('Jogo de Lençóis - 150 Fios', 159.90, '1234567890142', 1);
 
+    create table categorias(
+    id int primary key auto_increment,
+    nome varchar (80) not null
+    );
+
+    
     
 ";
 
