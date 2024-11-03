@@ -44,8 +44,18 @@ $script = "
     nome varchar (80) not null
     );
 
-    
-    
+    CREATE TABLE IF NOT EXISTS USUARIOS (
+        ID INT PRIMARY KEY AUTO_INCREMENT,
+        LOGIN VARCHAR(50) NOT NULL,
+        SENHA VARCHAR(80) NOT NULL,
+        ATIVO BIT DEFAULT 1
+    );
+
+    CREATE TABLE IF NOT EXISTS PERMISSOES (
+        ID INT PRIMARY KEY AUTO_INCREMENT,
+        DESCRICAO VARCHAR(150) NOT NULL,
+        ROLE VARCHAR(50) NOT NULL
+    );
 ";
 
 $conexao = new mysqli($servidor, $usuario, $senha, $banco);
