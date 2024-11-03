@@ -75,7 +75,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="permissao.php">
+            <a class="nav-link" href="permissoes.php">
                 Permissão
             </a>
         </li>
